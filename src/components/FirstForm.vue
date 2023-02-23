@@ -3,7 +3,7 @@
     <div class="form-group flex flex-col gap-2">
       <div class="label flex justify-between">
         <label for="name">Name</label>
-        <p class="error-text">This file is</p>
+        <p v-if="formError.name" class="error-text">This field is required</p>
       </div>
       <Field
         name="name"
@@ -16,7 +16,7 @@
     <div class="form-group flex flex-col gap-2">
       <div class="label flex justify-between">
         <label for="email">Email Address</label>
-        <p class="error-text">This file is</p>
+        <p v-if="formError.email" class="error-text">This field is required</p>
       </div>
       <Field
         name="email"
@@ -29,7 +29,7 @@
     <div class="form-group flex flex-col gap-2">
       <div class="label flex justify-between">
         <label for="phone">Phone Number</label>
-        <p class="error-text">This file is</p>
+        <p v-if="formError.phone" class="error-text">This field is required</p>
       </div>
       <Field
         name="phone"
@@ -46,5 +46,5 @@
 import { inject } from "vue";
 import { Field } from "vee-validate";
 
-const { formValue } = inject("state");
+const { formValue, formError } = inject("state");
 </script>

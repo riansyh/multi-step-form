@@ -57,10 +57,33 @@ import SecondForm from "./SecondForm.vue";
 import ThirdForm from "./ThirdForm.vue";
 import FourthForm from "./FourthForm.vue";
 
-const { formState } = inject("state");
+const { formState, formError, formValue } = inject("state");
 
 const handleNext = () => {
-  if (formState.index < 4) formState.index += 1;
+  if (formState.index === 0) {
+    if (formValue.name === "") {
+      formError.name = true;
+    } else {
+      formError.name = false;
+    }
+    if (
+      formValue.email === "" &&
+      !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(formValue.email)
+    ) {
+      formError.email = true;
+    } else {
+      formError.email = false;
+    }
+    if (formValue.phone === "") {
+      formError.phone = true;
+    } else {
+      formError.phone = false;
+    }
+
+    if (formError.name || formError.email || formError.phone) return;
+
+    formState.index += 1;
+  } else if (formState.index < 4) formState.index += 1;
 };
 const handleBack = () => {
   if (formState.index > 0) formState.index -= 1;

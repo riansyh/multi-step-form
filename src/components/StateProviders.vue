@@ -17,6 +17,11 @@ const state = reactive({
     addsOn: [false, false, false],
   },
   formState: { index: 0 },
+  formError: {
+    name: false,
+    email: false,
+    phone: false,
+  },
 });
 provide("state", state);
 </script>

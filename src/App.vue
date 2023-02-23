@@ -1,12 +1,11 @@
 <script setup>
 
-import TheWelcome from "./components/TheWelcome.vue";
+import MainPage from "./components/MainPage.vue";
 </script>
 
 <template>
   <main>
-    <h1 class="text-4xl">HAA</h1>
-    <TheWelcome />
+    <MainPage />
   </main>
 </template>
 

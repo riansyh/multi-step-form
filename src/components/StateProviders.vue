@@ -10,10 +10,13 @@ const state = reactive({
     name: "",
     email: "",
     phone: "",
-    plan: {},
-    addsOn: [],
+    plan: {
+      name: "arcade",
+      type: "monthly",
+    },
+    addsOn: [false, false, false],
   },
-  formState: 0,
+  formState: { index: 0 },
 });
 provide("state", state);
 </script>

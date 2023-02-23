@@ -12,6 +12,10 @@ export const title = [
         desc: "Add-ons help enhance your gaming experience",
     },
     {
+        title: "Finishing up",
+        desc: "Double-check everything looks OK before confirming.",
+    },
+    {
         title: "Thank you!",
         desc: "Thanks for confirming your subscription! We hope youhave fun using our platform. If you need support, please feel free to email us at support@loremgaming.com",
     },

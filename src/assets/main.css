@@ -27,4 +27,22 @@ html {
   .stepper-title {
     @apply leading-none font-semibold tracking-wider text-white;
   }
+  .stepper-num {
+    @apply flex items-center justify-center h-8 w-8 font-semibold leading-none rounded-full border-[1px] border-light-gray text-light-gray;
+  }
+  .stepper-num-active {
+    @apply bg-light-gray text-marine-blue;
+  }
+  .plan-card {
+    @apply cursor-pointer flex flex-col justify-between rounded-lg p-3 border-[1px] border-light-gray hover:border-purplish-blue transition-all md:min-h-[160px] flex-1;
+  }
+  .plan-card-active {
+    @apply border-purplish-blue bg-alabaster;
+  }
+  .addson-card {
+    @apply flex justify-between items-center p-5 rounded-lg border-[1px] border-light-gray cursor-pointer hover:border-purplish-blue transition-all;
+  }
+  .addson-card-active {
+    @apply border-purplish-blue bg-alabaster;
+  }
 }

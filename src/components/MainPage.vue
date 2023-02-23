@@ -7,7 +7,7 @@
     <div
       class="form-container flex-grow px-[100px] py-[18px] flex flex-col justify-between md:min-w-[650px]"
     >
-      <div class="form-header">
+      <div class="form-header" v-if="!isFinished">
         <h2 class="text-4xl font-bold">{{ title[formState.index].title }}</h2>
         <p class="mt-2 mb-10 text-cool-gray">
           {{ title[formState.index].desc }}
@@ -20,7 +20,10 @@
           <FourthForm v-if="formState.index === 3" />
         </Form>
       </div>
-      <div class="form-footer flex w-full justify-between items-end">
+      <div
+        class="form-footer flex w-full justify-between items-end"
+        v-if="!isFinished"
+      >
         <button
           :class="{ invisible: formState.index === 0 }"
           class="button text-cool-gray hover:text-marine-blue px-0"
@@ -37,18 +40,20 @@
         </button>
         <button
           class="bg-purplish-blue hover:bg-opacity-75 button"
-          @click="handleNext"
+          @click="() => (isFinished = true)"
           v-if="formState.index === 3"
         >
           Submit
         </button>
       </div>
+
+      <ThankYouView v-if="isFinished" />
     </div>
   </section>
 </template>
 
 <script setup>
-import { inject } from "vue";
+import { inject, ref } from "vue";
 import { title } from "./../assets/data/title";
 import { Form } from "vee-validate";
 import StepperComponent from "./StepperComponent.vue";
@@ -56,8 +61,10 @@ import FirstForm from "./FirstForm.vue";
 import SecondForm from "./SecondForm.vue";
 import ThirdForm from "./ThirdForm.vue";
 import FourthForm from "./FourthForm.vue";
+import ThankYouView from "./ThankYouView.vue";
 
 const { formState, formError, formValue } = inject("state");
+const isFinished = ref(false);
 
 const handleNext = () => {
   if (formState.index === 0) {

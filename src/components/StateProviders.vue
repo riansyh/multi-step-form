@@ -13,6 +13,7 @@ const state = reactive({
     plan: {
       name: "arcade",
       type: "monthly",
+      price: "",
     },
     addsOn: [false, false, false],
   },

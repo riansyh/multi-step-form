@@ -129,7 +129,10 @@ const price = computed(() => {
   return (price) => {
     const month = formValue.plan.type === "monthly" ? 1 : 10;
     const type = formValue.plan.type === "monthly" ? "mo" : "yr";
-    return `$${parseInt(price) * month}/${type}`;
+    const priceText = `$${parseInt(price) * month}/${type}`;
+    formValue.plan.price = priceText;
+
+    return priceText;
   };
 });
 </script>

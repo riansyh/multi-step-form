@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col gap-3 fade-in">
     <label
       for="adds-1"
       class="addson-card"

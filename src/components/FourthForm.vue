@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col px-6 py-5 rounded-lg bg-alabaster gap-6">
+  <div class="flex flex-col px-6 py-5 rounded-lg bg-alabaster gap-6 fade-in">
     <div class="flex justify-between items-center">
       <div>
         <p class="font-semibold">{{ planName }} ({{ planType }})</p>
@@ -27,7 +27,7 @@
       <p class="text-sm">+{{ addsOnPrice[2] }}</p>
     </div>
   </div>
-  <div class="flex justify-between px-6 py-5 rounded-lg gap-6">
+  <div class="flex justify-between px-6 py-5 rounded-lg gap-6 fade-in">
     <p class="text-cool-gray">
       Total (per {{ formValue.plan.type.split("ly")[0] }})
     </p>

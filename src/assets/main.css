@@ -16,7 +16,7 @@ html {
 
 @layer components {
   .error-text {
-    @apply text-strawberry-red font-semibold;
+    @apply text-strawberry-red font-semibold fade-in-short;
   }
   .input-field {
     @apply px-4 py-3 rounded-lg border-light-gray border-[1px] focus:border-purplish-blue focus:outline-none transition-colors font-semibold;
@@ -28,7 +28,7 @@ html {
     @apply leading-none font-semibold tracking-wider text-white;
   }
   .stepper-num {
-    @apply flex items-center justify-center h-8 w-8 font-semibold leading-none rounded-full border-[1px] border-light-gray text-light-gray;
+    @apply flex items-center justify-center h-8 w-8 font-semibold leading-none rounded-full border-[1px] border-light-gray text-light-gray transition-all duration-500;
   }
   .stepper-num-active {
     @apply bg-light-gray text-marine-blue;
@@ -44,5 +44,23 @@ html {
   }
   .addson-card-active {
     @apply border-purplish-blue bg-alabaster;
+  }
+}
+
+@layer base {
+  .fade-in {
+    animation: fadeIn 500ms ease-in-out;
+  }
+  .fade-in-short {
+    animation: fadeIn 300ms ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }

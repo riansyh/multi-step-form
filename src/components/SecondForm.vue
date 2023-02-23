@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8 w-full">
+  <div class="flex flex-col gap-8 w-full fade-in">
     <div class="flex flex-row justify-between w-full gap-8">
       <label
         for="plan-1"
@@ -92,7 +92,10 @@
           v-model="formValue.plan.type"
         />
       </label>
-      <div class="p-1 rounded-full w-10 bg-marine-blue transition-all">
+      <div
+        class="p-1 rounded-full w-10 bg-marine-blue transition-all cursor-pointer"
+        @click="handleToggle"
+      >
         <div
           class="w-3 h-3 bg-white rounded-full transition-all"
           :class="
@@ -135,4 +138,12 @@ const price = computed(() => {
     return priceText;
   };
 });
+
+const handleToggle = () => {
+  if (formValue.plan.type === "monthly") {
+    formValue.plan.type = "yearly";
+  } else {
+    formValue.plan.type = "monthly";
+  }
+};
 </script>

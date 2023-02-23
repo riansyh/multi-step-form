@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 fade-in">
     <div class="form-group flex flex-col gap-2">
       <div class="label flex justify-between">
         <label for="name">Name</label>

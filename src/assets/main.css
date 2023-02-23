@@ -6,10 +6,25 @@
 @tailwind utilities;
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
   font-weight: normal;
-  @apply font-sans;
+  @apply font-sans flex items-center justify-center min-h-screen text-marine-blue;
+}
+
+html {
+  @apply bg-magnolia;
+}
+
+@layer components {
+  .error-text {
+    @apply text-strawberry-red font-semibold;
+  }
+  .input-field {
+    @apply px-4 py-3 rounded-lg border-light-gray border-[1px] focus:border-purplish-blue focus:outline-none transition-colors font-semibold;
+  }
+  .button {
+    @apply px-6 py-4 rounded-lg text-white font-semibold transition-colors;
+  }
+  .stepper-title {
+    @apply leading-none font-semibold tracking-wider text-white;
+  }
 }

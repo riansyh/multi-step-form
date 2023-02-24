@@ -65,7 +65,7 @@ As a beginner in Vue, I learned more about how to use Vue 3 fundamentals and con
 ### Useful resources
 
 - [Vue Documentation](https://vuejs.org/guide/) - This helped me to implemented every Vue feature and guide to create this project using vue.
-- [Vuemastery Courses](Vuemastery.com/) - This is an free course which helped me to understand the Vue 3 fundamentals & concepts.
+- [Vuemastery Courses](https://vuemastery.com/) - This is an free course which helped me to understand the Vue 3 fundamentals & concepts.
 
 ## Author
 

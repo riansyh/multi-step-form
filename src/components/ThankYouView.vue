@@ -2,7 +2,12 @@
   <div
     class="flex flex-col items-center justify-center gap-8 w-full h-full text-center"
   >
-    <img src="./../assets/images/icon-thank-you.svg" alt="thankyou logo" />
+    <img
+      src="./../assets/images/icon-thank-you.svg"
+      alt="thankyou logo"
+      width="80"
+      height="80"
+    />
     <div>
       <h1 class="font-bold text-3xl">Thank you!</h1>
       <p class="text-cool-gray text-sm mt-3">

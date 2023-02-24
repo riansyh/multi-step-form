@@ -18,9 +18,9 @@
 
         <Form class="form">
           <FirstForm v-if="formState.index === 0" />
-          <SecondForm v-if="formState.index === 1" />
-          <ThirdForm v-if="formState.index === 2" />
-          <FourthForm v-if="formState.index === 3" />
+          <SecondForm v-else-if="formState.index === 1" />
+          <ThirdForm v-else-if="formState.index === 2" />
+          <FourthForm v-else-if="formState.index === 3" />
         </Form>
       </div>
       <div

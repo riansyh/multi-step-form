@@ -69,32 +69,44 @@ import ThankYouView from "./ThankYouView.vue";
 const { formState, formError, formValue } = inject("state");
 const isFinished = ref(false);
 
+const testEmailFormat = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 const handleNext = () => {
   if (formState.index === 0) {
     if (formValue.name === "") {
-      formError.name = true;
+      formError.name.status = true;
     } else {
-      formError.name = false;
-    }
-    if (
-      formValue.email === "" &&
-      !/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(formValue.email)
-    ) {
-      formError.email = true;
-    } else {
-      formError.email = false;
-    }
-    if (formValue.phone === "") {
-      formError.phone = true;
-    } else {
-      formError.phone = false;
+      formError.name.status = false;
     }
 
-    if (formError.name || formError.email || formError.phone) return;
+    if (formValue.email === "" || !testEmailFormat(formValue.email)) {
+      formError.email.status = true;
+      if (!testEmailFormat(formValue.email) && formValue.email !== "") {
+        formError.email.message = "Email format invalid";
+      } else {
+        formError.email.message = "This field is required";
+      }
+    } else {
+      formError.email.status = false;
+    }
+
+    if (formValue.phone === "") {
+      formError.phone.status = true;
+    } else {
+      formError.phone.status = false;
+    }
+
+    if (
+      formError.name.status ||
+      formError.email.status ||
+      formError.phone.status
+    )
+      return;
 
     formState.index += 1;
   } else if (formState.index < 4) formState.index += 1;
 };
+
 const handleBack = () => {
   if (formState.index > 0) formState.index -= 1;
 };

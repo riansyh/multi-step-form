@@ -19,9 +19,9 @@ const state = reactive({
   },
   formState: { index: 0 },
   formError: {
-    name: false,
-    email: false,
-    phone: false,
+    name: { status: false, message: "This field is required" },
+    email: { status: false, message: "This field is required" },
+    phone: { status: false, message: "This field is required" },
   },
 });
 provide("state", state);

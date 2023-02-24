@@ -14,6 +14,10 @@ html {
   @apply bg-magnolia;
 }
 
+main {
+  @apply px-3;
+}
+
 @layer components {
   .error-text {
     @apply text-strawberry-red font-semibold fade-in-short;

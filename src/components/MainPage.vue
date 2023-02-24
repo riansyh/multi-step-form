@@ -53,6 +53,21 @@
       <ThankYouView v-if="isFinished" />
     </div>
   </section>
+
+  <div class="text-center py-4">
+    <p>
+      Challenge by
+      <a
+        class="font-semibold text-purplish-blue"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a class="font-semibold text-purplish-blue" href="https://riansyh.tech/"
+        >Rian Febriansyah</a
+      >.
+    </p>
+  </div>
 </template>
 
 <script setup>

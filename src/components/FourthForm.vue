@@ -38,26 +38,19 @@
 
 <script setup>
 import { inject, computed } from "vue";
-
+import { addsOn } from "../assets/data/adds-on";
+import { useCapitalFirstLetter } from "../utils/capital-first-letter";
 const { formValue, formState } = inject("state");
 
-const planName = computed(
-  () =>
-    formValue.plan.name.charAt(0).toUpperCase() + formValue.plan.name.slice(1)
-);
-
-const planType = computed(
-  () =>
-    formValue.plan.type.charAt(0).toUpperCase() + formValue.plan.type.slice(1)
-);
-
+const planName = computed(() => useCapitalFirstLetter(formValue.plan.name));
+const planType = computed(() => useCapitalFirstLetter(formValue.plan.type));
 const planPrice = computed(
   () =>
     `$${formValue.plan.price}/${formValue.plan.type === "yearly" ? "yr" : "mo"}`
 );
 
 const addsOnPrice = computed(() => {
-  const prices = [1, 2, 2];
+  const prices = addsOn.map((adds) => adds.price);
   const month = formValue.plan.type === "monthly" ? 1 : 10;
   const type = formValue.plan.type === "monthly" ? "mo" : "yr";
 

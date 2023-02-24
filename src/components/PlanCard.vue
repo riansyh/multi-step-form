@@ -28,6 +28,7 @@
 <script setup>
 import { Field } from "vee-validate";
 import { inject, defineProps, computed } from "vue";
+import { useCapitalFirstLetter } from "../utils/capital-first-letter";
 
 const { formValue } = inject("state");
 const props = defineProps({
@@ -39,9 +40,7 @@ const imgUrl = computed(() => `/src/assets/images/icon-${props.name}.svg`);
 
 const id = computed(() => `plan-${props.name}`);
 
-const name = computed(
-  () => props.name.charAt(0).toUpperCase() + props.name.slice(1)
-);
+const name = computed(() => useCapitalFirstLetter(props.name));
 
 const price = computed(() => {
   return (price) => {

@@ -36,7 +36,7 @@ const props = defineProps({
   price: String,
 });
 
-const imgUrl = computed(() => `/src/assets/images/icon-${props.name}.svg`);
+const imgUrl = computed(() => `/icon-${props.name}.svg`);
 
 const id = computed(() => `plan-${props.name}`);
 

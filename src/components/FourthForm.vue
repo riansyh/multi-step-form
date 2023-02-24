@@ -11,7 +11,7 @@
         </button>
       </div>
       <p class="font-semibold">
-        {{ formValue.plan.price }}
+        {{ planPrice }}
       </p>
     </div>
     <hr class="text-light-gray" v-if="formValue.addsOn.includes(true)" />
@@ -51,6 +51,11 @@ const planType = computed(
     formValue.plan.type.charAt(0).toUpperCase() + formValue.plan.type.slice(1)
 );
 
+const planPrice = computed(
+  () =>
+    `$${formValue.plan.price}/${formValue.plan.type === "yearly" ? "yr" : "mo"}`
+);
+
 const addsOnPrice = computed(() => {
   const prices = [1, 2, 2];
   const month = formValue.plan.type === "monthly" ? 1 : 10;
@@ -66,7 +71,7 @@ const addsOnPrice = computed(() => {
 const totalPrice = computed(() => {
   const type = formValue.plan.type === "monthly" ? "mo" : "yr";
   const month = formValue.plan.type === "monthly" ? 1 : 10;
-  const planPrice = parseInt(formValue.plan.price.split("$")[1].split("/")[0]);
+  const planPrice = formValue.plan.price;
   let addsOnPrice = 0;
 
   if (formValue.addsOn[0]) addsOnPrice += 1 * month;

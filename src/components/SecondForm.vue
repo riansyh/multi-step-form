@@ -3,78 +3,9 @@
     <div
       class="flex md:flex-row flex-col justify-between w-full gap-3 md:gap-4 lg:gap-8"
     >
-      <label
-        for="plan-1"
-        class="plan-card"
-        :class="{ 'plan-card-active': formValue.plan.name === 'arcade' }"
-      >
-        <Field
-          type="radio"
-          name="plan"
-          id="plan-1"
-          value="arcade"
-          v-model="formValue.plan['name']"
-          class="hidden"
-        ></Field>
-        <div class="w-10 h-10 rounded-full bg-purplish-blue">
-          <img src="./../assets/images/icon-arcade.svg" alt="arcade icon" />
-        </div>
-        <div>
-          <h3 class="font-semibold">Arcade</h3>
-          <p class="text-xs text-cool-gray">{{ price(9) }}</p>
-          <p class="mt-1 text-xs" v-if="formValue.plan.type === 'yearly'">
-            2 months free
-          </p>
-        </div>
-      </label>
-      <label
-        for="plan-2"
-        class="plan-card"
-        :class="{ 'plan-card-active': formValue.plan.name === 'advanced' }"
-      >
-        <Field
-          type="radio"
-          name="plan"
-          id="plan-2"
-          value="advanced"
-          v-model="formValue.plan['name']"
-          class="hidden"
-        ></Field>
-        <div class="w-10 h-10 rounded-full bg-purplish-blue">
-          <img src="./../assets/images/icon-advanced.svg" alt="advanced icon" />
-        </div>
-        <div>
-          <h3 class="font-semibold">Advanced</h3>
-          <p class="text-xs text-cool-gray">{{ price(12) }}</p>
-          <p class="mt-1 text-xs" v-if="formValue.plan.type === 'yearly'">
-            2 months free
-          </p>
-        </div>
-      </label>
-      <label
-        for="plan-3"
-        class="plan-card"
-        :class="{ 'plan-card-active': formValue.plan.name === 'pro' }"
-      >
-        <Field
-          type="radio"
-          name="plan"
-          id="plan-3"
-          value="pro"
-          v-model="formValue.plan['name']"
-          class="hidden"
-        ></Field>
-        <div class="w-10 h-10 rounded-full bg-purplish-blue">
-          <img src="./../assets/images/icon-pro.svg" alt="pro icon" />
-        </div>
-        <div>
-          <h3 class="font-semibold">Pro</h3>
-          <p class="text-xs text-cool-gray">{{ price(15) }}</p>
-          <p class="mt-1 text-xs" v-if="formValue.plan.type === 'yearly'">
-            2 months free
-          </p>
-        </div>
-      </label>
+      <PlanCard name="arcade" price="9" />
+      <PlanCard name="advanced" price="12" />
+      <PlanCard name="pro" price="15" />
     </div>
     <div
       class="flex items-center justify-center p-3 rounded-lg w-full gap-6 bg-alabaster"
@@ -126,20 +57,11 @@
 
 <script setup>
 import { Field } from "vee-validate";
-import { inject, computed } from "vue";
+import { inject, watch } from "vue";
+import { price } from "../assets/data/price";
+import PlanCard from "./PlanCard.vue";
 
 const { formValue } = inject("state");
-
-const price = computed(() => {
-  return (price) => {
-    const month = formValue.plan.type === "monthly" ? 1 : 10;
-    const type = formValue.plan.type === "monthly" ? "mo" : "yr";
-    const priceText = `$${parseInt(price) * month}/${type}`;
-    formValue.plan.price = priceText;
-
-    return priceText;
-  };
-});
 
 const handleToggle = () => {
   if (formValue.plan.type === "monthly") {
@@ -148,4 +70,9 @@ const handleToggle = () => {
     formValue.plan.type = "monthly";
   }
 };
+
+watch(formValue.plan, () => {
+  const month = formValue.plan.type === "monthly" ? 1 : 10;
+  formValue.plan.price = price[formValue.plan.name] * month;
+});
 </script>

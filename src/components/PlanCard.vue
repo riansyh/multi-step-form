@@ -27,7 +27,7 @@
 
 <script setup>
 import { Field } from "vee-validate";
-import { inject, defineProps, computed } from "vue";
+import { inject, computed } from "vue";
 import { useCapitalFirstLetter } from "../utils/capital-first-letter";
 
 const { formValue } = inject("state");

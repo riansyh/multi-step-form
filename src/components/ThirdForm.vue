@@ -6,7 +6,7 @@
       :desc="adds.desc"
       :price="adds.price"
       :index="index"
-      :key="index"
+      :key="`adds-${index}`"
     />
   </div>
 </template>

@@ -23,7 +23,7 @@
 
 <script setup>
 import { Field } from "vee-validate";
-import { inject, defineProps, computed } from "vue";
+import { inject, computed } from "vue";
 
 const { formValue } = inject("state");
 

@@ -4,7 +4,7 @@
   >
     <StepItem
       v-for="(title, index) in titles"
-      :key="index"
+      :key="`adds-${index}`"
       :title="title"
       :index="index"
     />

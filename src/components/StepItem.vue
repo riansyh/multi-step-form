@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { inject, defineProps } from "vue";
+import { inject } from "vue";
 
 const { formState } = inject("state");
 

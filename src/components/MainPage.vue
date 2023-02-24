@@ -71,15 +71,16 @@
 </template>
 
 <script setup>
-import { inject, ref } from "vue";
+import { inject, ref, defineAsyncComponent } from "vue";
 import { title } from "./../assets/data/title";
 import { Form } from "vee-validate";
 import StepperComponent from "./StepperComponent.vue";
 import FirstForm from "./FirstForm.vue";
-import SecondForm from "./SecondForm.vue";
-import ThirdForm from "./ThirdForm.vue";
-import FourthForm from "./FourthForm.vue";
-import ThankYouView from "./ThankYouView.vue";
+
+const SecondForm = defineAsyncComponent(() => import("./SecondForm.vue"));
+const ThirdForm = defineAsyncComponent(() => import("./ThirdForm.vue"));
+const FourthForm = defineAsyncComponent(() => import("./FourthForm.vue"));
+const ThankYouView = defineAsyncComponent(() => import("./ThankYouView.vue"));
 
 const { formState, formError, formValue } = inject("state");
 const isFinished = ref(false);

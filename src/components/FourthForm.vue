@@ -5,6 +5,7 @@
         <p class="font-semibold">{{ planName }} ({{ planType }})</p>
         <button
           class="text-sm underline text-cool-gray hover:text-purplish-blue transition-all"
+          @click.prevent="() => (formState.index = 1)"
         >
           Change
         </button>
@@ -38,7 +39,7 @@
 <script setup>
 import { inject, computed } from "vue";
 
-const { formValue } = inject("state");
+const { formValue, formState } = inject("state");
 
 const planName = computed(
   () =>

@@ -15,7 +15,7 @@ html {
 }
 
 main {
-  @apply px-3;
+  @apply px-3 w-full md:w-fit;
 }
 
 @layer components {
@@ -23,7 +23,7 @@ main {
     @apply text-strawberry-red font-semibold fade-in-short;
   }
   .input-field {
-    @apply px-4 py-3 rounded-lg border-light-gray border-[1px] focus:border-purplish-blue focus:outline-none transition-colors font-semibold;
+    @apply px-4 py-3 rounded-lg border-light-gray border-[1px] focus:border-purplish-blue hover:border-purplish-blue focus:outline-none transition-colors font-semibold;
   }
   .button {
     @apply px-3 py-3 md:px-6 md:py-4 rounded-lg text-white font-semibold transition-colors;
@@ -38,7 +38,7 @@ main {
     @apply bg-light-gray text-marine-blue;
   }
   .plan-card {
-    @apply cursor-pointer flex md:flex-col gap-3 md:justify-between rounded-lg p-3 border-[1px] border-light-gray hover:border-purplish-blue transition-all md:min-h-[160px] flex-1;
+    @apply cursor-pointer flex md:flex-col gap-3 md:justify-between rounded-lg p-3 border-[1px] border-light-gray hover:border-purplish-blue transition-all lg:min-h-[160px] flex-1;
   }
   .plan-card-active {
     @apply border-purplish-blue bg-alabaster;

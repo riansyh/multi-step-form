@@ -1,6 +1,6 @@
 <template>
   <div
-    class="steper p-10 md:rounded-lg bg-purplish-blue flex md:flex-col gap-3 md:gap-8 items-start justify-center md:justify-start md:min-w-[274px] md:relative overflow-hidden"
+    class="steper p-10 md:rounded-lg bg-purplish-blue flex md:flex-col gap-3 md:gap-8 items-start justify-center md:justify-start md:min-w-[274px] md:min-h-[568px] md:relative overflow-hidden"
   >
     <div class="flex flex-row gap-4 items-center z-10">
       <div
@@ -58,7 +58,7 @@
     <img
       src="./../assets/images/bg-sidebar-mobile.svg"
       alt=""
-      class="absolute top-0 left-0 z-[1] md:hidden block"
+      class="absolute bottom-0 left-0 z-[1] md:hidden block w-full self-end"
     />
   </div>
 </template>

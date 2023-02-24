@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-8 w-full fade-in">
-    <div class="flex flex-row justify-between w-full gap-8">
+    <div class="flex md:flex-row flex-col justify-between w-full gap-8">
       <label
         for="plan-1"
         class="plan-card"

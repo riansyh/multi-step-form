@@ -1,11 +1,14 @@
 <template>
+  <StepperComponent
+    class="md:hidden flex top-0 left-0 right-0 fixed md:relative pb-24"
+  />
   <section
-    class="max-w-[940px] max-h-[600px] md:min-h-[600px] bg-white p-4 rounded-[16px] flex flex-col md:flex-row shadow-blue"
+    class="min-w-[80vw] md:min-w-fit md:max-w-[940px] max-h-[600px] md:min-h-[600px] bg-white p-4 rounded-[16px] flex flex-col md:flex-row shadow-blue z-30 mt-24 md:mt-0 mb-32 md:mb-0"
   >
-    <StepperComponent />
+    <StepperComponent class="hidden md:flex" />
 
     <div
-      class="form-container flex-grow px-[100px] py-[18px] flex flex-col justify-between md:min-w-[650px]"
+      class="form-container flex-grow px-6 md:px-[100px] py-[18px] flex flex-col justify-between md:min-w-[650px]"
     >
       <div class="form-header" v-if="!isFinished">
         <h2 class="text-4xl font-bold">{{ title[formState.index].title }}</h2>
@@ -21,7 +24,7 @@
         </Form>
       </div>
       <div
-        class="form-footer flex w-full justify-between items-end"
+        class="form-footer flex w-full justify-between items-end fixed md:relative bg-white left-0 bottom-0 p-4 md:p-0"
         v-if="!isFinished"
       >
         <button
@@ -43,7 +46,7 @@
           @click="() => (isFinished = true)"
           v-if="formState.index === 3"
         >
-          Submit
+          Confirm
         </button>
       </div>
 

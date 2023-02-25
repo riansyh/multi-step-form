@@ -7,7 +7,7 @@
       {{ props.index + 1 }}
     </div>
     <div class="hidden md:block">
-      <p class="leading-tight text-light-gray text-opacity-90">
+      <p class="leading-tight text-light-gray text-opacity-70 text-xs">
         STEP {{ props.index + 1 }}
       </p>
       <p class="stepper-title uppercase">{{ props.title }}</p>

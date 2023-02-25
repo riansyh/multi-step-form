@@ -20,13 +20,16 @@ main {
 
 @layer components {
   .error-text {
-    @apply text-strawberry-red font-semibold fade-in-short;
+    @apply text-strawberry-red font-semibold fade-in-short text-xs md:text-base;
   }
   .input-field {
     @apply px-4 py-3 rounded-lg border-light-gray border-[1px] focus:border-purplish-blue hover:border-purplish-blue focus:outline-none transition-colors font-semibold;
   }
   .input-field.error {
     @apply border-strawberry-red;
+  }
+  .form-label {
+    @apply flex justify-between items-end;
   }
   .button {
     @apply px-3 py-3 md:px-6 md:py-4 rounded-lg text-white font-semibold transition-colors;

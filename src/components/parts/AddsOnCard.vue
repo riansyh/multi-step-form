@@ -11,6 +11,7 @@
         type="checkbox"
         value="true"
         :id="id"
+        class="cursor-pointer accent-purplish-blue border-light-gray outline-light-gray w-4 rounded"
       />
       <div>
         <p class="font-semibold">{{ props.title }}</p>

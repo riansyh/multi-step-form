@@ -59,7 +59,7 @@ main {
 
 @layer base {
   .fade-in {
-    animation: fadeIn 500ms ease-in-out;
+    animation: fadeIn 300ms ease-in-out;
   }
   .fade-in-short {
     animation: fadeIn 300ms ease-in-out;

@@ -11,5 +11,5 @@
 </template>
 
 <script setup>
-import InputField from "./InputField.vue";
+import InputField from "./parts/InputField.vue";
 </script>

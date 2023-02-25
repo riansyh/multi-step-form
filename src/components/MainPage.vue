@@ -75,11 +75,11 @@ import { inject, ref, defineAsyncComponent } from "vue";
 import { title } from "./../assets/data/title";
 import { Form } from "vee-validate";
 import StepperComponent from "./StepperComponent.vue";
-import FirstForm from "./FirstForm.vue";
+import FirstForm from "./StepOne.vue";
 
-const SecondForm = defineAsyncComponent(() => import("./SecondForm.vue"));
-const ThirdForm = defineAsyncComponent(() => import("./ThirdForm.vue"));
-const FourthForm = defineAsyncComponent(() => import("./FourthForm.vue"));
+const SecondForm = defineAsyncComponent(() => import("./StepTwo.vue"));
+const ThirdForm = defineAsyncComponent(() => import("./StepThree.vue"));
+const FourthForm = defineAsyncComponent(() => import("./StepFour.vue"));
 const ThankYouView = defineAsyncComponent(() => import("./ThankYouView.vue"));
 
 const { formState, formError, formValue } = inject("state");

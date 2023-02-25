@@ -12,6 +12,6 @@
 </template>
 
 <script setup>
-import AddsOnCard from "./AddsOnCard.vue";
+import AddsOnCard from "./parts/AddsOnCard.vue";
 import { addsOn } from "../assets/data/adds-on";
 </script>

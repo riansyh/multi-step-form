@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import StepItem from "./StepItem.vue";
+import StepItem from "./parts/StepItem.vue";
 
 const titles = ["your info", "select plan", "adds-on", "summary"];
 </script>

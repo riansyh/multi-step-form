@@ -20,7 +20,7 @@
 <script setup>
 import { inject, computed } from "vue";
 import { Field } from "vee-validate";
-import { useCapitalFirstLetter } from "../utils/capital-first-letter";
+import { useCapitalFirstLetter } from "../../utils/capital-first-letter";
 
 const { formValue, formError } = inject("state");
 const props = defineProps({

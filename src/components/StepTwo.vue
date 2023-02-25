@@ -59,7 +59,7 @@
 import { Field } from "vee-validate";
 import { inject, watch } from "vue";
 import { price } from "../assets/data/price";
-import PlanCard from "./PlanCard.vue";
+import PlanCard from "./parts/PlanCard.vue";
 
 const { formValue } = inject("state");
 
